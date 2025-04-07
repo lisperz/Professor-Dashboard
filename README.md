@@ -203,5 +203,5 @@ After starting, open http://localhost:4200 in your browser to view the frontend 
 - **Future Improvements**:
   - Add more data analysis charts and a more sophisticated user authentication system.
   - Enhance API security, error handling, and logging.
-- **License**: Please specify an open-source license (e.g., MIT, Apache 2.0) here.
+- **License**: Apache License 2.0.
 - **Contact**: For any questions or suggestions, please contact chenzhu4@illinois.edu.
