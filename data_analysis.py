@@ -12,7 +12,7 @@ try:
     client = MongoClient("mongodb://127.0.0.1:27017/", serverSelectionTimeoutMS=5000)
     client.server_info()  # Check connection
     db = client["professor_dashboard"]  # Database name
-    collection = db["professors"]         # Collection name
+    collection = db["professors"]   
     print("Connected to MongoDB successfully.")
 except errors.ServerSelectionTimeoutError as err:
     print("Failed to connect to MongoDB:", err)
