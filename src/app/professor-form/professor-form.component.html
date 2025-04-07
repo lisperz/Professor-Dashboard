@@ -1,0 +1,23 @@
+<mat-card>
+  <mat-card-title>Add New Professor</mat-card-title>
+  <mat-card-content>
+    <form (ngSubmit)="onSubmit()" #profForm="ngForm">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Name</mat-label>
+        <input matInput [(ngModel)]="professor.name" name="name" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Title</mat-label>
+        <input matInput [(ngModel)]="professor.title" name="title" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Department</mat-label>
+        <input matInput [(ngModel)]="professor.department" name="department" required>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </form>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,11 @@
+<mat-card *ngIf="professor">
+  <mat-card-title>{{ professor.name }}</mat-card-title>
+  <mat-card-subtitle>{{ professor.title }}</mat-card-subtitle>
+  <mat-card-content>
+    <p>Department: {{ professor.department }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="warn" (click)="deleteProfessor()">Delete</button>
+    <button mat-raised-button color="primary" routerLink="/list">Back to List</button>
+  </mat-card-actions>
+</mat-card>

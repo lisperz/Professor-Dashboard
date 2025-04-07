@@ -1,0 +1,9 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .professor-card {
+    width: 300px;
+  }
+  

@@ -1,0 +1,18 @@
+<h1>Welcome to {{ title }}</h1>
+<mat-toolbar color="primary">
+    <span>{{ title }}</span>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/list">Professor List</button>
+    <button mat-button routerLink="/form">Add Professor</button>
+  </mat-toolbar>
+  
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+  
+
+<!-- 导航链接，可点击跳转到教授列表 -->
+<a [routerLink]="['/list']">Go to Professor List</a>
+
+<!-- 路由匹配的组件内容将会显示在此处 -->
+<router-outlet></router-outlet>
