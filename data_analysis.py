@@ -1,22 +1,34 @@
-import json
 import pandas as pd
 import matplotlib.pyplot as plt
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 from reportlab.lib.units import inch
+from pymongo import MongoClient, errors
 
 # ---------------------------
-# 1. Data Loading
+# 1. Data Loading from MongoDB
 # ---------------------------
+try:
+    client = MongoClient("mongodb://127.0.0.1:27017/", serverSelectionTimeoutMS=5000)
+    client.server_info()  # Check connection
+    db = client["professor_dashboard"]  # Database name
+    collection = db["professors"]         # Collection name
+    print("Connected to MongoDB successfully.")
+except errors.ServerSelectionTimeoutError as err:
+    print("Failed to connect to MongoDB:", err)
+    raise err
 
-# Method 1: Load from a local JSON file (e.g., located at src/assets/data/professors.json)
-json_file = 'src/assets/data/professors.json'
-with open(json_file, 'r') as f:
-    data = json.load(f)
+# Fetch data from the 'professors' collection, excluding the '_id' field
+data = list(collection.find({}, {"_id": 0}))
+if not data:
+    print("No data found in MongoDB.")
+else:
+    print("Data loaded successfully from MongoDB:")
+    print(data)
 
 # Convert the data into a Pandas DataFrame
 df = pd.DataFrame(data)
-print("Data loaded successfully:")
+print("\nDataFrame head:")
 print(df.head())
 
 # ---------------------------
