@@ -18,7 +18,7 @@ logging.basicConfig(
 )
 
 # Configure JWT
-app.config["JWT_SECRET_KEY"] = "super-secret-key"  # Please use a more complex key in production
+app.config["JWT_SECRET_KEY"] = "super-secret-key"  # Use a more complex key in production
 jwt = JWTManager(app)
 
 # Connect to MongoDB (ensure MongoDB service is running)
